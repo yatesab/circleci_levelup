@@ -9,3 +9,8 @@ jobs:
           composer install
           composer update
           ./vendor/bin/phpunit UnitTests.php
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - build
