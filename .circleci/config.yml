@@ -5,9 +5,3 @@ jobs:
       - image: circleci/php:7.2
     steps:
       - checkout
-      - run:
-          name: Run Tests
-          command: |
-          composer install
-          composer update
-          ./vendor/bin/phpunit UnitTests.php
