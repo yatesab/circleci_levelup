@@ -5,11 +5,8 @@ jobs:
       - image: circleci/php:7.2
     steps:
       - checkout
-      - run:
-          name: Add jq dependency
-          command: |
-            curl -sS https://getcomposer.org/installer | php
-            mv composer.phar /usr/local/bin/composer
-            composer install
-            composer update
-            ./vendor/bin/phpunit UnitTests.php
+      - run: curl -sS https://getcomposer.org/installer | php
+      - run: mv composer.phar /usr/local/bin/composer
+      - run: composer install
+      - run: composer update
+      - run: ./vendor/bin/phpunit UnitTests.php
