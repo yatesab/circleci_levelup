@@ -8,6 +8,8 @@ jobs:
       - run:
           name: Add jq dependency
           command: |
-            curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer
+            curl -sS https://getcomposer.org/installer | php
+            mv composer.phar /usr/local/bin/composer
             composer install
             composer update
+            ./vendor/bin/phpunit UnitTests.php
