@@ -1,0 +1,13 @@
+{
+  "name": "yatesab/circlecilevelup",
+  "description": "A circle ci build that I am using at the level up",
+  "authors": [
+    {
+      "name": "Andrew Yates",
+      "email": "andrew.yates@madwiremedia.com"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "~8"
+  }
+}
