@@ -5,8 +5,17 @@ jobs:
       - image: circleci/php:7.2
     steps:
       - checkout
-      - run: curl -sS https://getcomposer.org/installer | php
-      - run: mv composer.phar /usr/local/bin/composer
-      - run: composer install
-      - run: composer update
-      - run: ./vendor/bin/phpunit UnitTests.php
+      - run:
+          name: Composer Install
+          command: |
+            curl -sS https://getcomposer.org/installer | php
+            mv composer.phar /usr/local/bin/composer
+      - run:
+          name: Vender Install
+          command: |
+            composer install
+            composer update
+      - run:
+          name: Unit Tests
+          command: |
+            ./vendor/bin/phpunit UnitTests.php
