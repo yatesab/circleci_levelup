@@ -1,16 +1,13 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
       - image: circleci/php:7.2
     steps:
       - checkout
-      - command: |
+      - run:
+          name: Run Tests
+          command: |
           composer install
           composer update
           ./vendor/bin/phpunit UnitTests.php
-workflows:
-  version: 2.1
-  build_and_test:
-    jobs:
-      - build
