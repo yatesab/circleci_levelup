@@ -11,6 +11,7 @@ class UnitTests extends TestCase
     /** @var DateTime $testData */
     public $testData = null;
 
+    /** @var string $dateTimeString */
     public $dateTimeString = "1-1-2019 05:00:00";
 
     /**
